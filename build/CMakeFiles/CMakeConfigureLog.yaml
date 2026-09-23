@@ -40,6 +40,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -54,24 +55,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -111,6 +109,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -122,24 +121,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -171,24 +167,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -245,6 +238,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -256,24 +250,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -308,6 +299,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -319,24 +311,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -371,6 +360,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -382,24 +372,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -434,6 +421,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -445,24 +433,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -497,6 +482,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -508,24 +494,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -560,6 +543,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -571,24 +555,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -623,6 +604,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -634,24 +616,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -686,6 +665,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -697,24 +677,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -749,6 +726,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -760,24 +738,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -812,6 +787,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -823,24 +799,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -875,6 +848,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -914,6 +888,9 @@ events:
       - "C:/Program Files/Git/cmd/tapi.com"
       - "C:/Program Files/Git/cmd/tapi.exe"
       - "C:/Program Files/Git/cmd/tapi"
+      - "C:/Program Files/Neovim/bin/tapi.com"
+      - "C:/Program Files/Neovim/bin/tapi.exe"
+      - "C:/Program Files/Neovim/bin/tapi"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/tapi.com"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/tapi.exe"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/tapi"
@@ -933,24 +910,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -988,6 +962,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -1027,6 +1002,9 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar-16.1.com"
       - "C:/Program Files/Git/cmd/gcc-ar-16.1.exe"
       - "C:/Program Files/Git/cmd/gcc-ar-16.1"
+      - "C:/Program Files/Neovim/bin/gcc-ar-16.1.com"
+      - "C:/Program Files/Neovim/bin/gcc-ar-16.1.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ar-16.1"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar-16.1.com"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar-16.1.exe"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar-16.1"
@@ -1075,6 +1053,9 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar-16.com"
       - "C:/Program Files/Git/cmd/gcc-ar-16.exe"
       - "C:/Program Files/Git/cmd/gcc-ar-16"
+      - "C:/Program Files/Neovim/bin/gcc-ar-16.com"
+      - "C:/Program Files/Neovim/bin/gcc-ar-16.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ar-16"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar-16.com"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar-16.exe"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar-16"
@@ -1123,6 +1104,9 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ar16.com"
       - "C:/Program Files/Git/cmd/gcc-ar16.exe"
       - "C:/Program Files/Git/cmd/gcc-ar16"
+      - "C:/Program Files/Neovim/bin/gcc-ar16.com"
+      - "C:/Program Files/Neovim/bin/gcc-ar16.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ar16"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar16.com"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar16.exe"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ar16"
@@ -1143,24 +1127,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -1198,6 +1179,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -1237,6 +1219,9 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib-16.1.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib-16.1.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib-16.1"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-16.1.com"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-16.1.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-16.1"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-16.1.com"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-16.1.exe"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-16.1"
@@ -1285,6 +1270,9 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib-16.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib-16.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib-16"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-16.com"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-16.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib-16"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-16.com"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-16.exe"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib-16"
@@ -1333,6 +1321,9 @@ events:
       - "C:/Program Files/Git/cmd/gcc-ranlib16.com"
       - "C:/Program Files/Git/cmd/gcc-ranlib16.exe"
       - "C:/Program Files/Git/cmd/gcc-ranlib16"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib16.com"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib16.exe"
+      - "C:/Program Files/Neovim/bin/gcc-ranlib16"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib16.com"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib16.exe"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/gcc-ranlib16"
@@ -1353,24 +1344,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -1408,6 +1396,7 @@ events:
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
       - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/Git/usr/bin/vendor_perl/"
@@ -1434,24 +1423,21 @@ events:
     search_context:
       ENV{PATH}:
         - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
         - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\local\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
         - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\usr\\bin"
-        - "C:\\Users\\Ranvijay kumar\\bin"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
         - "C:\\WINDOWS\\System32\\OpenSSH"
         - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
-        - "C:\\mingw64\\bin"
-        - "C:\\Program Files\\Git\\mingw64\\bin"
         - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
         - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
         - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
@@ -1471,8 +1457,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-j7zphr"
-      binary: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-j7zphr"
+      source: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-qyhk33"
+      binary: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-qyhk33"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1483,10 +1469,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: 'C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-j7zphr'
+        Change Dir: 'C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-qyhk33'
         
-        Run Build Command(s): C:/mingw64/bin/ninja.exe -v cmTC_fa6ca
-        [1/2] C:\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj -c C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): C:/mingw64/bin/ninja.exe -v cmTC_fcfc3
+        [1/2] C:\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj -c C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=C:\\mingw64\\bin\\c++.exe
         OFFLOAD_TARGET_NAMES=nvptx-none
@@ -1495,8 +1481,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r4) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa6ca.dir/'
-         C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fa6ca.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccAS5niC.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fcfc3.dir/'
+         C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fcfc3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccoiBAZy.s
         GNU C++20 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r4) version 16.1.0 (x86_64-w64-mingw32)
         	compiled by GNU C version 16.1.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.28-GMP
         
@@ -1521,13 +1507,13 @@ events:
          C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include
         End of search list.
         Compiler executable checksum: 3f647afcbff7dd7d5477bebc0d9138d1
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa6ca.dir/'
-         C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccAS5niC.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fcfc3.dir/'
+         C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccoiBAZy.s
         GNU assembler version 2.47 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r4) 2.47.20260726
         COMPILER_PATH=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/;C:/mingw64/bin/../libexec/gcc/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/mingw64/bin/../lib/gcc/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\mingw64\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_fa6ca.exe -Wl,--out-implib,libcmTC_fa6ca.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\mingw64\\bin\\c++.exe  -v -Wl,-v CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_fcfc3.exe -Wl,--out-implib,libcmTC_fcfc3.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
         Using built-in specs.
         COLLECT_GCC=C:\\mingw64\\bin\\c++.exe
         COLLECT_LTO_WRAPPER=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe
@@ -1539,12 +1525,12 @@ events:
         gcc version 16.1.0 (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r4) 
         COMPILER_PATH=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/;C:/mingw64/bin/../libexec/gcc/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/
         LIBRARY_PATH=C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/;C:/mingw64/bin/../lib/gcc/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/;C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa6ca.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fa6ca.'
-         C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccWtscPP.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fa6ca.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fa6ca.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcfc3.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fcfc3.'
+         C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccwMlpTH.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fcfc3.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fcfc3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
         collect2 version 16.1.0
-        C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccWtscPP.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fa6ca.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fa6ca.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
+        C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccwMlpTH.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fcfc3.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fcfc3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o
         GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r4) 2.47.20260726
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa6ca.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fa6ca.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcfc3.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fcfc3.'
         
       exitCode: 0
   -
@@ -1585,10 +1571,10 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-j7zphr']
+        ignore line: [Change Dir: 'C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/CMakeScratch/TryCompile-qyhk33']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/mingw64/bin/ninja.exe -v cmTC_fa6ca]
-        ignore line: [[1/2] C:\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj -c C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): C:/mingw64/bin/ninja.exe -v cmTC_fcfc3]
+        ignore line: [[1/2] C:\\mingw64\\bin\\c++.exe   -v -o CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj -c C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\mingw64\\bin\\c++.exe]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
@@ -1598,8 +1584,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r4) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa6ca.dir/']
-        ignore line: [ C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fa6ca.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccAS5niC.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fcfc3.dir/']
+        ignore line: [ C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/cc1plus.exe -quiet -v -iprefix C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/ -D_REENTRANT C:/mingw64/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_fcfc3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccoiBAZy.s]
         ignore line: [GNU C++20 (MinGW-W64 x86_64-ucrt-posix-seh  built by Brecht Sanders  r4) version 16.1.0 (x86_64-w64-mingw32)]
         ignore line: [	compiled by GNU C version 16.1.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.28-GMP]
         ignore line: []
@@ -1624,8 +1610,8 @@ events:
         ignore line: [ C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 3f647afcbff7dd7d5477bebc0d9138d1]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa6ca.dir/']
-        ignore line: [ C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccAS5niC.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fcfc3.dir/']
+        ignore line: [ C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccoiBAZy.s]
         ignore line: [GNU assembler version 2.47 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders  r4) 2.47.20260726]
         ignore line: [COMPILER_PATH=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/]
         ignore line: [C:/mingw64/bin/../libexec/gcc/]
@@ -1636,8 +1622,8 @@ events:
         ignore line: [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\mingw64\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_fa6ca.exe -Wl --out-implib libcmTC_fa6ca.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\mingw64\\bin\\c++.exe  -v -Wl -v CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_fcfc3.exe -Wl --out-implib libcmTC_fcfc3.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\mingw64\\bin\\c++.exe]
         ignore line: [COLLECT_LTO_WRAPPER=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe]
@@ -1656,14 +1642,14 @@ events:
         ignore line: [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib/]
         ignore line: [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/]
         ignore line: [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa6ca.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fa6ca.']
-        link line: [ C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccWtscPP.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fa6ca.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fa6ca.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o] ==> linker architecture flags [-m;i386pep]
-        link line: [ C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccWtscPP.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fa6ca.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fa6ca.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcfc3.exe' '-foffload-options=-l_GCC_stdc++' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fcfc3.']
+        link line: [ C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccwMlpTH.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fcfc3.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fcfc3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o] ==> linker architecture flags [-m;i386pep]
+        link line: [ C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe -plugin C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll -plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccwMlpTH.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_fcfc3.exe C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0 -LC:/mingw64/bin/../lib/gcc -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib -LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../.. -v CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_fcfc3.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmingwex -lmsvcrt -lkernel32 C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtend.o]
           arg [C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/16.1.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccWtscPP.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\Users\\RANVIJ~1\\AppData\\Local\\Temp\\ccwMlpTH.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -1685,7 +1671,7 @@ events:
           arg [i386pep] ==> ignore
           arg [-Bdynamic] ==> search dynamic
           arg [-o] ==> ignore
-          arg [cmTC_fa6ca.exe] ==> ignore
+          arg [cmTC_fcfc3.exe] ==> ignore
           arg [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
           arg [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o] ==> obj [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/crtbegin.o]
           arg [-LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0] ==> dir [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0]
@@ -1695,9 +1681,9 @@ events:
           arg [-LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../../../x86_64-w64-mingw32/lib]
           arg [-LC:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..] ==> dir [C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_fa6ca.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [CMakeFiles/cmTC_fcfc3.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
           arg [--out-implib] ==> ignore
-          arg [libcmTC_fa6ca.dll.a] ==> ignore
+          arg [libcmTC_fcfc3.dll.a] ==> ignore
           arg [--major-image-version] ==> ignore
           arg [0] ==> ignore
           arg [--minor-image-version] ==> ignore
@@ -1771,4 +1757,413 @@ events:
     message: |
       Running the CXX compiler's linker: "Configured with: ../configure --prefix=/c/Prog/winlibs_staging_ucrt/home64/inst_gcc-16.1.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r4' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++ --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --enable-libstdcxx-pch --with-mpc=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-mpfr=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-gmp=/c/Prog/winlibs_staging_ucrt/custombuilt64 --with-isl=/c/Prog/winlibs_staging_ucrt/custombuilt64 --disable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --enable-libgdiagnostics --with-libiconv --with-system-zlib --with-build-sysroot=/c/Prog/winlibs_staging_ucrt/home64/gcc-16.1.0/build_mingw/mingw-w64 CFLAGS='-I/c/Prog/winlibs_staging_ucrt/custombuilt64/include/libdl-win32   -march=nocona -msahf -mtune=generic -O2 -Wno-error=format' CXXFLAGS='-Wno-int-conversion  -march=nocona -msahf -mtune=generic -O2' LDFLAGS='-pthread -Wl,--no-insert-timestamp -Wl,--dynamicbase -Wl,--high-entropy-va -Wl,--nxcompat -Wl,--tsaware' LD=/c/Prog/winlibs_staging_ucrt/custombuilt64/share/binutils/bin/ld.exe" "--version"
       
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/mingw64/lib/cmake/SFML/SFMLConfig.cmake:79 (find_path)"
+      - "CMakeLists.txt:9 (find_package)"
+    mode: "path"
+    variable: "SFML_DOC_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "SFML.tag"
+    candidate_directories:
+      - "C:/mingw64/bin/SFML/doc/"
+      - "C:/mingw64/bin/share/doc/SFML/"
+      - "C:/mingw64/bin/"
+      - "C:/Users/Ranvijay kumar/bin/SFML/doc/"
+      - "C:/Users/Ranvijay kumar/bin/share/doc/SFML/"
+      - "C:/Users/Ranvijay kumar/bin/"
+      - "C:/Program Files/Git/mingw64/bin/SFML/doc/"
+      - "C:/Program Files/Git/mingw64/bin/share/doc/SFML/"
+      - "C:/Program Files/Git/mingw64/bin/"
+      - "C:/Program Files/Git/usr/local/bin/SFML/doc/"
+      - "C:/Program Files/Git/usr/local/bin/share/doc/SFML/"
+      - "C:/Program Files/Git/usr/local/bin/"
+      - "C:/Program Files/Git/usr/bin/SFML/doc/"
+      - "C:/Program Files/Git/usr/bin/share/doc/SFML/"
+      - "C:/Program Files/Git/usr/bin/"
+      - "C:/Windows/System32/SFML/doc/"
+      - "C:/Windows/System32/share/doc/SFML/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/SFML/doc/"
+      - "C:/Windows/share/doc/SFML/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/SFML/doc/"
+      - "C:/Windows/System32/wbem/share/doc/SFML/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/SFML/doc/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/share/doc/SFML/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/SFML/doc/"
+      - "C:/Windows/System32/OpenSSH/share/doc/SFML/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/Git/cmd/SFML/doc/"
+      - "C:/Program Files/Git/cmd/share/doc/SFML/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/Neovim/bin/SFML/doc/"
+      - "C:/Program Files/Neovim/bin/share/doc/SFML/"
+      - "C:/Program Files/Neovim/bin/"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/SFML/doc/"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/share/doc/SFML/"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/SFML/doc/"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/share/doc/SFML/"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Program Files/Git/usr/bin/vendor_perl/SFML/doc/"
+      - "C:/Program Files/Git/usr/bin/vendor_perl/share/doc/SFML/"
+      - "C:/Program Files/Git/usr/bin/vendor_perl/"
+      - "C:/Program Files/Git/usr/bin/core_perl/SFML/doc/"
+      - "C:/Program Files/Git/usr/bin/core_perl/share/doc/SFML/"
+      - "C:/Program Files/Git/usr/bin/core_perl/"
+      - "C:/Users/Ranvijay kumar/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b/885a3324-6e53-4435-bfa9-f4841013c681/bin/SFML/doc/"
+      - "C:/Users/Ranvijay kumar/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b/885a3324-6e53-4435-bfa9-f4841013c681/bin/share/doc/SFML/"
+      - "C:/Users/Ranvijay kumar/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b/885a3324-6e53-4435-bfa9-f4841013c681/bin/"
+      - "C:/Program Files/Git/mingw64/include/SFML/doc/"
+      - "C:/Program Files/Git/mingw64/include/share/doc/SFML/"
+      - "C:/Program Files/Git/mingw64/include/"
+      - "C:/Program Files/Git/mingw64/SFML/doc/"
+      - "C:/Program Files/Git/mingw64/share/doc/SFML/"
+      - "C:/Program Files/Git/mingw64/"
+      - "C:/Program Files/include/SFML/doc/"
+      - "C:/Program Files/include/share/doc/SFML/"
+      - "C:/Program Files/include/"
+      - "C:/Program Files/SFML/doc/"
+      - "C:/Program Files/share/doc/SFML/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/include/SFML/doc/"
+      - "C:/Program Files (x86)/include/share/doc/SFML/"
+      - "C:/Program Files (x86)/include/"
+      - "C:/Program Files (x86)/SFML/doc/"
+      - "C:/Program Files (x86)/share/doc/SFML/"
+      - "C:/Program Files (x86)/"
+      - "C:/mingw64/include/SFML/doc/"
+      - "C:/mingw64/include/share/doc/SFML/"
+      - "C:/mingw64/include/"
+      - "C:/mingw64/SFML/doc/"
+      - "C:/mingw64/share/doc/SFML/"
+      - "C:/mingw64/"
+      - "C:/Program Files (x86)/SoftwareRenderer/include/SFML/doc/"
+      - "C:/Program Files (x86)/SoftwareRenderer/include/share/doc/SFML/"
+      - "C:/Program Files (x86)/SoftwareRenderer/include/"
+      - "C:/Program Files (x86)/SoftwareRenderer/SFML/doc/"
+      - "C:/Program Files (x86)/SoftwareRenderer/share/doc/SFML/"
+      - "C:/Program Files (x86)/SoftwareRenderer/"
+      - "C:/mingw64/lib/SFML/doc/"
+      - "C:/mingw64/lib/share/doc/SFML/"
+      - "C:/mingw64/lib/"
+      - "C:/Users/Ranvijay kumar/Library/Frameworks/SFML/doc/"
+      - "C:/Users/Ranvijay kumar/Library/Frameworks/share/doc/SFML/"
+      - "C:/Users/Ranvijay kumar/Library/Frameworks/"
+      - "/Library/Frameworks/SFML/doc/"
+      - "/Library/Frameworks/share/doc/SFML/"
+      - "/Library/Frameworks/"
+      - "/usr/local/SFML/doc/"
+      - "/usr/local/share/doc/SFML/"
+      - "/usr/local/"
+      - "/usr/SFML/doc/"
+      - "/usr/share/doc/SFML/"
+      - "/usr/"
+      - "/sw/SFML/doc/"
+      - "/sw/share/doc/SFML/"
+      - "/sw/"
+      - "/opt/local/SFML/doc/"
+      - "/opt/local/share/doc/SFML/"
+      - "/opt/local/"
+      - "/opt/csw/SFML/doc/"
+      - "/opt/csw/share/doc/SFML/"
+      - "/opt/csw/"
+      - "/opt/SFML/doc/"
+      - "/opt/share/doc/SFML/"
+      - "/opt/"
+    searched_directories:
+      - "C:/mingw64/bin/SFML/doc/SFML.tag"
+      - "C:/mingw64/bin/share/doc/SFML/SFML.tag"
+      - "C:/mingw64/bin/SFML.tag"
+      - "C:/Users/Ranvijay kumar/bin/SFML/doc/SFML.tag"
+      - "C:/Users/Ranvijay kumar/bin/share/doc/SFML/SFML.tag"
+      - "C:/Users/Ranvijay kumar/bin/SFML.tag"
+      - "C:/Program Files/Git/mingw64/bin/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/mingw64/bin/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/mingw64/bin/SFML.tag"
+      - "C:/Program Files/Git/usr/local/bin/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/usr/local/bin/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/usr/local/bin/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/SFML.tag"
+      - "C:/Windows/System32/SFML/doc/SFML.tag"
+      - "C:/Windows/System32/share/doc/SFML/SFML.tag"
+      - "C:/Windows/System32/SFML.tag"
+      - "C:/Windows/SFML/doc/SFML.tag"
+      - "C:/Windows/share/doc/SFML/SFML.tag"
+      - "C:/Windows/SFML.tag"
+      - "C:/Windows/System32/wbem/SFML/doc/SFML.tag"
+      - "C:/Windows/System32/wbem/share/doc/SFML/SFML.tag"
+      - "C:/Windows/System32/wbem/SFML.tag"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/SFML/doc/SFML.tag"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/share/doc/SFML/SFML.tag"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/SFML.tag"
+      - "C:/Windows/System32/OpenSSH/SFML/doc/SFML.tag"
+      - "C:/Windows/System32/OpenSSH/share/doc/SFML/SFML.tag"
+      - "C:/Windows/System32/OpenSSH/SFML.tag"
+      - "C:/Program Files/Git/cmd/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/cmd/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/cmd/SFML.tag"
+      - "C:/Program Files/Neovim/bin/SFML/doc/SFML.tag"
+      - "C:/Program Files/Neovim/bin/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Neovim/bin/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/SFML/doc/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/share/doc/SFML/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Microsoft/WindowsApps/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/SFML/doc/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/share/doc/SFML/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Local/Programs/Microsoft VS Code/bin/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/vendor_perl/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/vendor_perl/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/vendor_perl/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/core_perl/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/core_perl/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/usr/bin/core_perl/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b/885a3324-6e53-4435-bfa9-f4841013c681/bin/SFML/doc/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b/885a3324-6e53-4435-bfa9-f4841013c681/bin/share/doc/SFML/SFML.tag"
+      - "C:/Users/Ranvijay kumar/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b/885a3324-6e53-4435-bfa9-f4841013c681/bin/SFML.tag"
+      - "C:/Program Files/Git/mingw64/include/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/mingw64/include/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/mingw64/include/SFML.tag"
+      - "C:/Program Files/Git/mingw64/SFML/doc/SFML.tag"
+      - "C:/Program Files/Git/mingw64/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/Git/mingw64/SFML.tag"
+      - "C:/Program Files/include/SFML/doc/SFML.tag"
+      - "C:/Program Files/include/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/include/SFML.tag"
+      - "C:/Program Files/SFML/doc/SFML.tag"
+      - "C:/Program Files/share/doc/SFML/SFML.tag"
+      - "C:/Program Files/SFML.tag"
+      - "C:/Program Files (x86)/include/SFML/doc/SFML.tag"
+      - "C:/Program Files (x86)/include/share/doc/SFML/SFML.tag"
+      - "C:/Program Files (x86)/include/SFML.tag"
+      - "C:/Program Files (x86)/SFML/doc/SFML.tag"
+      - "C:/Program Files (x86)/share/doc/SFML/SFML.tag"
+      - "C:/Program Files (x86)/SFML.tag"
+      - "C:/mingw64/include/SFML/doc/SFML.tag"
+      - "C:/mingw64/include/share/doc/SFML/SFML.tag"
+      - "C:/mingw64/include/SFML.tag"
+      - "C:/mingw64/SFML/doc/SFML.tag"
+      - "C:/mingw64/share/doc/SFML/SFML.tag"
+      - "C:/mingw64/SFML.tag"
+      - "C:/Program Files (x86)/SoftwareRenderer/include/SFML/doc/SFML.tag"
+      - "C:/Program Files (x86)/SoftwareRenderer/include/share/doc/SFML/SFML.tag"
+      - "C:/Program Files (x86)/SoftwareRenderer/include/SFML.tag"
+      - "C:/Program Files (x86)/SoftwareRenderer/SFML/doc/SFML.tag"
+      - "C:/Program Files (x86)/SoftwareRenderer/share/doc/SFML/SFML.tag"
+      - "C:/Program Files (x86)/SoftwareRenderer/SFML.tag"
+      - "C:/mingw64/lib/SFML/doc/SFML.tag"
+      - "C:/mingw64/lib/share/doc/SFML/SFML.tag"
+      - "C:/mingw64/lib/SFML.tag"
+      - "C:/Users/Ranvijay kumar/Library/Frameworks/SFML/doc/SFML.tag"
+      - "C:/Users/Ranvijay kumar/Library/Frameworks/share/doc/SFML/SFML.tag"
+      - "C:/Users/Ranvijay kumar/Library/Frameworks/SFML.tag"
+      - "/Library/Frameworks/SFML/doc/SFML.tag"
+      - "/Library/Frameworks/share/doc/SFML/SFML.tag"
+      - "/Library/Frameworks/SFML.tag"
+      - "/usr/local/SFML/doc/SFML.tag"
+      - "/usr/local/share/doc/SFML/SFML.tag"
+      - "/usr/local/SFML.tag"
+      - "/usr/SFML/doc/SFML.tag"
+      - "/usr/share/doc/SFML/SFML.tag"
+      - "/usr/SFML.tag"
+      - "/sw/SFML/doc/SFML.tag"
+      - "/sw/share/doc/SFML/SFML.tag"
+      - "/sw/SFML.tag"
+      - "/opt/local/SFML/doc/SFML.tag"
+      - "/opt/local/share/doc/SFML/SFML.tag"
+      - "/opt/local/SFML.tag"
+      - "/opt/csw/SFML/doc/SFML.tag"
+      - "/opt/csw/share/doc/SFML/SFML.tag"
+      - "/opt/csw/SFML.tag"
+      - "/opt/SFML/doc/SFML.tag"
+      - "/opt/share/doc/SFML/SFML.tag"
+      - "/opt/SFML.tag"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
+        - "C:\\Users\\Ranvijay kumar\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\local\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\WINDOWS\\System32\\OpenSSH"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
+        - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/SoftwareRenderer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files/Git/mingw64"
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/mingw64"
+        - "C:/Program Files (x86)/SoftwareRenderer"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:9 (find_package)"
+    name: "SFML"
+    components:
+      -
+        name: "COMPONNETS"
+        required: true
+        found: false
+      -
+        name: "graphics"
+        required: true
+        found: false
+      -
+        name: "audio"
+        required: true
+        found: false
+      -
+        name: "window"
+        required: true
+        found: false
+      -
+        name: "system"
+        required: true
+        found: false
+    configs:
+      -
+        filename: "SFML.cps"
+        kind: "cps"
+      -
+        filename: "sfml.cps"
+        kind: "cps"
+      -
+        filename: "SFMLConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "sfml-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "2.6"
+      version_complete: "2.6"
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "SFML"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/pkgRedirects/SFMLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/pkgRedirects/sfml-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/pkgRedirects/lib/cps/SFML.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/pkgRedirects/lib/cps/sfml.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/pkgRedirects/share/cps/SFML.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/pkgRedirects/share/cps/sfml.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/mingw64/SFMLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/mingw64/sfml-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/mingw64/lib/cps/SFML.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/mingw64/lib/cps/sfml.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/mingw64/share/cps/SFML.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/mingw64/share/cps/sfml.cps"
+        mode: "cps"
+        reason: "no_exist"
+    found:
+      path: "C:/mingw64/lib/cmake/SFML/SFMLConfig.cmake"
+      mode: "config"
+      version: "2.6.2"
+    search_context:
+      ENV{PATH}:
+        - "C:\\mingw64\\bin"
+        - "C:\\mingw64\\bin"
+        - "C:\\Users\\Ranvijay kumar\\bin"
+        - "C:\\Program Files\\Git\\mingw64\\bin"
+        - "C:\\Program Files\\Git\\usr\\local\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0"
+        - "C:\\WINDOWS\\System32\\OpenSSH"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Ranvijay kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Program Files\\Git\\usr\\bin\\vendor_perl"
+        - "C:\\Program Files\\Git\\usr\\bin\\core_perl"
+        - "C:\\Users\\Ranvijay kumar\\AppData\\Roaming\\Claude\\local-agent-mode-sessions\\skills-plugin\\0a4127a6-d3b1-4010-83d2-7ed4ed8fee0b\\885a3324-6e53-4435-bfa9-f4841013c681\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/SoftwareRenderer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files/Git/mingw64"
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/mingw64"
+        - "C:/Program Files (x86)/SoftwareRenderer"
 ...

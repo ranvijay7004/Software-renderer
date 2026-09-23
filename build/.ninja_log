@@ -1,5 +1,7 @@
 # ninja log v7
-18	788	8118065910087963	CMakeFiles/renderer.dir/src/main.cpp.obj	4ca7fecafe0c6e0b
-793	1063	8118065917834065	renderer.exe	953bb5c29daac722
-4	761	8118182740615367	CMakeFiles/renderer.dir/src/main.cpp.obj	4ca7fecafe0c6e0b
-762	1687	8118182748188981	renderer.exe	953bb5c29daac722
+49	418	8118608153868177	CMakeFiles/renderer.dir/src/main.cpp.obj	fe162f4cc62e4b2c
+420	584	8118608157570166	renderer.exe	1e43e9531dff06fa
+23	362	8118619283626276	build.ninja	34da853fb0e43de8
+23	362	8118619283626276	C:/Users/Ranvijay kumar/software_renderer/build/cmake_install.cmake	34da853fb0e43de8
+38	916	8118619284714621	CMakeFiles/renderer.dir/src/main.cpp.obj	fe162f4cc62e4b2c
+917	1189	8118619293497887	renderer.exe	1e43e9531dff06fa
