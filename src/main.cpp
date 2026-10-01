@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 const int WIDTH = 800;
 const int HEIGHT = 600;
@@ -27,6 +28,10 @@ struct Vec2{
         return result;
     }
 };
+
+float dot(Vec2 a , Vec2 b){
+    return a.x*b.x + a.y*b.y;
+}
 
 struct Vec3{
     float x,y,z;
@@ -66,6 +71,57 @@ struct Vec3{
         result.x = (x/z) * scale + centerX;
         result.y = (y/z) * scale + centerY;
         
+        return result;
+    }
+};
+
+float dot(Vec3 a , Vec3 b){
+    return a.x*b.x + a.y*b.y + a.z*b.z;
+}
+
+Vec3 cross(Vec3 a , Vec3 b){
+    Vec3 result;
+    result.x = a.y * b.z - b.y * a.z;
+    result.y = a.z * b.x - a.x * b.z;
+    result.z = a.x * b.y - a.y * b.x;
+    return result; 
+}
+
+struct Vec4{
+    float x,y,z,w;
+};
+
+float dot(Vec4 a , Vec4 b){
+    return a.x*b.x + a.y*b.y + a.z*b.z + a.w*b.w;
+}
+
+struct mat4{
+    Vec4 row0 , row1 , row2 , row3;
+
+    Vec4 multiply(Vec4 a) const {
+        Vec4 result;
+        result.x = dot(row0 , a);
+        result.y = dot(row1 , a);
+        result.z = dot(row2 , a);
+        result.w = dot(row3 , a);
+        return result;
+    }
+
+    static mat4 translation(float dx , float dy , float dz){
+        mat4 result;
+        result.row0 = {1,0,0,dx};
+        result.row1 = {0,1,0,dy};
+        result.row2 = {0,0,1,dz};
+        result.row3 = {0,0,0,1};
+        return result;
+    }
+
+    static mat4 scaler(float dx , float dy , float dz){
+        mat4 result;
+        result.row0 = {dx,0,0,0};
+        result.row1 = {0,dy,0,0};
+        result.row2 = {0,0,dz,0};
+        result.row3 = {0,0,0,1};
         return result;
     }
 };
@@ -185,6 +241,19 @@ int main(){
         {-3,-3,5} , {3,-3,5} , {3,3,5} , {-3,3,5}, //front face
         {-3,-3,8} , {3,-3,8} , {3,3,8} , {-3,3,8} //back face
     };
+
+    mat4 move = mat4::translation(5 , 0 , 0);
+    Vec4 point = {10,3,2,1};
+    Vec4 moved = move.multiply(point);
+    std::cerr<<moved.x<<std::endl;
+    std::cerr<<moved.y<<std::endl;
+    std::cerr<<moved.z<<std::endl;
+
+    mat4 scale = mat4::scaler(3,3,3);
+    Vec4 scaled = scale.multiply(point);
+    std::cerr<<scaled.x<<std::endl;
+    std::cerr<<scaled.y<<std::endl;
+    std::cerr<<scaled.z<<std::endl;
 
     drawcube(framebuffer,cubeverts,255,0,0,255);
 
