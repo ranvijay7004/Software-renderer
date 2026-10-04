@@ -1,8 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cmath>
 
-const int WIDTH = 800;
-const int HEIGHT = 600;
+const int WIDTH = 1920;
+const int HEIGHT = 1080;
 
 struct Vec2{
     float x,y;
@@ -124,10 +125,48 @@ struct mat4{
         result.row3 = {0,0,0,1};
         return result;
     }
+
+    static mat4 rotationZ(float angledegrees){
+        float angleradians = angledegrees * (3.14159265f / 180.0f);
+        mat4 result;
+        float c = cos(angleradians);
+        float s = sin(angleradians);
+        result.row0 = {c,-s,0,0};
+        result.row1 = {s,c,0,0};
+        result.row2 = {0,0,1,0};
+        result.row3 = {0,0,0,1};
+        return result;
+    }
+
+    static mat4 rotationY(float angledegrees){
+        float angleradians = angledegrees *(3.14159265f / 180.0f);
+        mat4 result;
+        float c = cos(angleradians);
+        float s = sin(angleradians);
+        result.row0 = {c,0,-s,0};
+        result.row1 = {0,1,0,0};
+        result.row2 = {s,0,c,0};
+        result.row3 = {0,0,0,1};
+        return result; 
+    }
+
+    static mat4 rotationX(float angledegrees){
+        float angleradians = angledegrees *(3.14159265f / 180.0f);
+        float c = cos(angleradians);
+        float s = sin(angleradians);
+        mat4 result;
+        result.row0 = {1,0,0,0};
+        result.row1 = {0,c,-s,0};
+        result.row2 = {0,s,c,0};
+        result.row3 = {0,0,0,1};
+        return result;
+    }
 };
 
 void setpixel(std::vector<uint8_t>& framebuffer , int x , int y , uint8_t r , 
     uint8_t g , uint8_t b , uint8_t a){
+        
+        if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) return;
 
         int index = (y * WIDTH + x) * 4;
 
@@ -210,12 +249,33 @@ void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 ,
 }
 
 void drawcube(std::vector<uint8_t>& framebuffer , Vec3 vert[8] ,
-    uint8_t r ,  uint8_t g , uint8_t b , uint8_t a){
+    uint8_t r ,  uint8_t g , uint8_t b , uint8_t a , float angle1 , float angle2 , float angle3){
         
         Vec2 sp[8];
+        bool visible[8];
+
+        mat4 rotateX = mat4::rotationX(angle2);
+        mat4 rotateY = mat4::rotationY(angle1);
+        mat4 rotateZ = mat4::rotationZ(angle3);
+        mat4 toorigin = mat4::translation(0,0,-6.5);
+        mat4 back = mat4::translation(0,0,6.5);
 
         for(int i  = 0 ; i < 8 ; i++){
-            sp[i] = vert[i].screenpoint(); 
+
+            Vec4 p = {vert[i].x , vert[i].y , vert[i].z , 1};
+
+            p = toorigin.multiply(p);
+            p = rotateY.multiply(p);
+            p = rotateX.multiply(p);
+            p = rotateZ.multiply(p);
+            p = back.multiply(p);
+
+            Vec3 final = {p.x , p.y , p.z};
+
+            visible[i] = final.z > 0.5f;
+            if(visible[i]){
+            sp[i] = final.screenpoint();
+            } 
         }
 
         int edges[12][2] = {
@@ -227,6 +287,7 @@ void drawcube(std::vector<uint8_t>& framebuffer , Vec3 vert[8] ,
         for(int i = 0 ; i < 12 ; i++){
             int indxa = edges[i][0];
             int indxb = edges[i][1];
+            if(!visible[indxa] || !visible[indxb]) continue;
             drawline(framebuffer,(int)sp[indxa].x , (int)sp[indxa].y ,
             (int)sp[indxb].x , (int)sp[indxb].y , r , g , b , a);
         }
@@ -238,11 +299,11 @@ int main(){
     std::vector<uint8_t> framebuffer(WIDTH * HEIGHT * 4);
 
     Vec3 cubeverts[8] = {
-        {-3,-3,5} , {3,-3,5} , {3,3,5} , {-3,3,5}, //front face
-        {-3,-3,8} , {3,-3,8} , {3,3,8} , {-3,3,8} //back face
+        {-3,-3,3.5} , {3,-3,3.5} , {3,3,3.5} , {-3,3,3.5}, //front face
+        {-3,-3,9.5} , {3,-3,9.5} , {3,3,9.5} , {-3,3,9.5} //back face
     };
 
-    mat4 move = mat4::translation(5 , 0 , 0);
+    /*mat4 move = mat4::translation(5 , 0 , 0);
     Vec4 point = {10,3,2,1};
     Vec4 moved = move.multiply(point);
     std::cerr<<moved.x<<std::endl;
@@ -253,26 +314,37 @@ int main(){
     Vec4 scaled = scale.multiply(point);
     std::cerr<<scaled.x<<std::endl;
     std::cerr<<scaled.y<<std::endl;
-    std::cerr<<scaled.z<<std::endl;
-
-    drawcube(framebuffer,cubeverts,255,0,0,255);
+    std::cerr<<scaled.z<<std::endl;*/
+    
+    float angle1 = 0;
+    float angle2 = 0;
+    float angle3 = 0;
 
     sf::Texture pixeltexture;
     pixeltexture.create(WIDTH,HEIGHT);
-    pixeltexture.update(framebuffer.data());
 
     sf::Sprite pixelsprite;
     pixelsprite.setTexture(pixeltexture);
 
     sf::RenderWindow window(sf::VideoMode(WIDTH,HEIGHT),"Window");
+    window.setFramerateLimit(60);
 
     while(window.isOpen()){
         sf::Event event;
-
+ 
         while(window.pollEvent(event)){
             if(event.type == sf::Event::Closed)
             window.close();
         }
+
+        drawcube(framebuffer,cubeverts,255,0,0,255,angle1,angle2,angle3);
+
+        angle1 += 1.0f;
+        angle2 += 1.0f;
+        angle3 += 1.0f;
+
+        pixeltexture.update(framebuffer.data());
+        std::fill(framebuffer.begin() , framebuffer.end(),0);
 
         window.clear();
         window.draw(pixelsprite);
