@@ -61,23 +61,14 @@ struct Vec3{
         return result;
     }
 
-    Vec2 screenpoint(){
-    
-        Vec2 result;
-
-        float scale = 200.00f;
-        float centerX = WIDTH / 2.00f;
-        float centerY = HEIGHT / 2.00f;
-
-        result.x = (x/z) * scale + centerX;
-        result.y = (y/z) * scale + centerY;
-        
-        return result;
-    }
 };
 
 float dot(Vec3 a , Vec3 b){
     return a.x*b.x + a.y*b.y + a.z*b.z;
+}
+
+float length(Vec3 a){
+    return std::sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
 }
 
 Vec3 cross(Vec3 a , Vec3 b){
@@ -86,6 +77,12 @@ Vec3 cross(Vec3 a , Vec3 b){
     result.y = a.z * b.x - a.x * b.z;
     result.z = a.x * b.y - a.y * b.x;
     return result; 
+}
+
+Vec3 normalize(Vec3 a){
+    float len = length(a);
+    if(len == 0) return a;
+    return {a.x/len , a.y/len , a.z/len};
 }
 
 struct Vec4{
@@ -99,12 +96,32 @@ float dot(Vec4 a , Vec4 b){
 struct mat4{
     Vec4 row0 , row1 , row2 , row3;
 
-    Vec4 multiply(Vec4 a) const {
+    Vec4 column0() const {return {row0.x , row1.x , row2.x , row3.x};};
+    Vec4 column1() const {return {row0.y , row1.y , row2.y , row3.y};};
+    Vec4 column2() const {return {row0.z , row1.z , row2.z , row3.z};};
+    Vec4 column3() const {return {row0.w , row1.w , row2.w , row3.w};};
+
+
+    Vec4 multiply(Vec4& a) const {
         Vec4 result;
         result.x = dot(row0 , a);
         result.y = dot(row1 , a);
         result.z = dot(row2 , a);
         result.w = dot(row3 , a);
+        return result;
+    }
+
+    mat4 multiply(mat4& a) const {
+        mat4 result;
+        Vec4 c0 = a.column0();
+        Vec4 c1 = a.column1();
+        Vec4 c2 = a.column2();
+        Vec4 c3 = a.column3();
+
+        result.row0 = {dot(row0,c0) , dot(row0,c1) , dot(row0,c2) , dot(row0,c3)};
+        result.row1 = {dot(row1,c0) , dot(row1,c1) , dot(row1,c2) , dot(row1,c3)};
+        result.row2 = {dot(row2,c0) , dot(row2,c1) , dot(row2,c2) , dot(row2,c3)};
+        result.row3 = {dot(row3,c0) , dot(row3,c1) , dot(row3,c2) , dot(row3,c3)};
         return result;
     }
 
@@ -159,6 +176,15 @@ struct mat4{
         result.row1 = {0,c,-s,0};
         result.row2 = {0,s,c,0};
         result.row3 = {0,0,0,1};
+        return result;
+    }
+
+    static mat4 perspective(float f){
+        mat4 result;
+        result.row0 = {f,0,0,0};
+        result.row1 = {0,f,0,0};
+        result.row2 = {0,0,1,0};
+        result.row3 = {0,0,1,0};
         return result;
     }
 };
@@ -226,6 +252,12 @@ int checkinside(int ax , int ay , int bx , int by , int px , int py){
     return (bx-ax)*(py-ay) - (by-ay)*(px-ax);
 }
 
+bool istopleft( int ax , int ay , int bx , int by){
+    bool istop = ay == by && bx > ax; 
+    bool isleft = ay > by;
+             return istop || isleft;
+}
+
 void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 , int y2 , int x3 , int y3 ,
     uint8_t r ,  uint8_t g , uint8_t b , uint8_t a){
 
@@ -240,7 +272,11 @@ void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 ,
                 int w2 = checkinside(x2,y2,x3,y3,x,y);
                 int w3 = checkinside(x3,y3,x1,y1,x,y);
 
-                bool inside = (w1 >= 0 && w2 >= 0 && w3 >= 0);
+                int bias1 = istopleft(x1,y1,x2,y2);
+                int bias2 = istopleft(x2,y2,x3,y3);
+                int bias3 = istopleft(x3,y3,x1,y1);
+
+                bool inside = (w1 + bias1 > 0 && w2 + bias2 > 0 && w3 + bias3 > 0);
                 if(inside){
                     setpixel(framebuffer,x,y,r,g,b,a);
                 }
@@ -248,51 +284,81 @@ void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 ,
         }
 }
 
+bool toscreen(mat4& m , Vec3 v , Vec2& out){
+    Vec4 p = {v.x , v.y , v.z , 1};
+    p = m.multiply(p);
+    if(p.w <= 0.5f) return false;
+    out = {p.x/p.w + WIDTH/2 , p.y/p.w + HEIGHT/2};
+    return true;
+}
+
 void drawcube(std::vector<uint8_t>& framebuffer , Vec3 vert[8] ,
     uint8_t r ,  uint8_t g , uint8_t b , uint8_t a , float angle1 , float angle2 , float angle3){
         
         Vec2 sp[8];
         bool visible[8];
+        
+        float camX = 0 , camY = 0 , camZ = -10;
 
         mat4 rotateX = mat4::rotationX(angle2);
         mat4 rotateY = mat4::rotationY(angle1);
         mat4 rotateZ = mat4::rotationZ(angle3);
         mat4 toorigin = mat4::translation(0,0,-6.5);
         mat4 back = mat4::translation(0,0,6.5);
+        mat4 pers = mat4::perspective(650.0f);
+        mat4 view = mat4::translation(-camX , -camY , -camZ);
+
+        mat4 x = pers.multiply(view)
+                .multiply(back)
+                .multiply(rotateY)
+                .multiply(rotateX)
+                .multiply(rotateZ)
+                .multiply(toorigin);
 
         for(int i  = 0 ; i < 8 ; i++){
-
-            Vec4 p = {vert[i].x , vert[i].y , vert[i].z , 1};
-
-            p = toorigin.multiply(p);
-            p = rotateY.multiply(p);
-            p = rotateX.multiply(p);
-            p = rotateZ.multiply(p);
-            p = back.multiply(p);
-
-            Vec3 final = {p.x , p.y , p.z};
-
-            visible[i] = final.z > 0.5f;
-            if(visible[i]){
-            sp[i] = final.screenpoint();
-            } 
+            visible[i] = toscreen(x , vert[i] , sp[i]);
         }
-
+       
         int edges[12][2] = {
             {0,1} , {1,2} , {2,3} , {3,0}, //front face
             {4,5} , {5,6} , {6,7} , {7,4}, //back face
             {0,4} , {1,5} , {2,6} , {3,7}, //connecting them
         };
+        
+        int faces[6][4] = {
+            {0,1,2,3} , {1,5,6,2}, 
+            {5,4,7,6} , {4,0,3,7}, 
+            {1,0,4,5} , {3,2,6,7}  //top and bottom
+        };
 
-        for(int i = 0 ; i < 12 ; i++){
-            int indxa = edges[i][0];
-            int indxb = edges[i][1];
-            if(!visible[indxa] || !visible[indxb]) continue;
-            drawline(framebuffer,(int)sp[indxa].x , (int)sp[indxa].y ,
-            (int)sp[indxb].x , (int)sp[indxb].y , r , g , b , a);
+        int colors[6][4] = {
+            {0,0,255,255} , {255,0,255,255},
+            {0,255,255,255} , {255,128,0,255},
+            {255,0,0,255} , {0,255,0,255}
+        };
+
+        for(int i = 0 ; i < 6 ; i++){
+
+            int v1 = faces[i][0];
+            int v2 = faces[i][1];
+            int v3 = faces[i][2];
+            int v4 = faces[i][3];
+
+            int c1 = colors[i][0];
+            int c2 = colors[i][1];
+            int c3 = colors[i][2];
+            int c4 = colors[i][3];
+            
+            if(visible[v1] && visible[v2] && visible[v3] && visible[v4]){
+
+                filltriangle(framebuffer , sp[v1].x , sp[v1].y , sp[v2].x ,
+                    sp[v2].y , sp[v3].x , sp[v3].y , c1 , c2 , c3 , c4);
+               
+                filltriangle(framebuffer , sp[v1].x , sp[v1].y , sp[v3].x ,
+                    sp[v3].y , sp[v4].x , sp[v4].y , c1 , c2 , c3 , c4);
+            }
         }
     }
-
 
 int main(){
 
@@ -302,23 +368,12 @@ int main(){
         {-3,-3,3.5} , {3,-3,3.5} , {3,3,3.5} , {-3,3,3.5}, //front face
         {-3,-3,9.5} , {3,-3,9.5} , {3,3,9.5} , {-3,3,9.5} //back face
     };
-
-    /*mat4 move = mat4::translation(5 , 0 , 0);
-    Vec4 point = {10,3,2,1};
-    Vec4 moved = move.multiply(point);
-    std::cerr<<moved.x<<std::endl;
-    std::cerr<<moved.y<<std::endl;
-    std::cerr<<moved.z<<std::endl;
-
-    mat4 scale = mat4::scaler(3,3,3);
-    Vec4 scaled = scale.multiply(point);
-    std::cerr<<scaled.x<<std::endl;
-    std::cerr<<scaled.y<<std::endl;
-    std::cerr<<scaled.z<<std::endl;*/
     
     float angle1 = 0;
-    float angle2 = 0;
-    float angle3 = 0;
+    float angle2 = 35.26;
+    float angle3 = 45;
+
+    std::cerr<<length(normalize({1,2,2}));
 
     sf::Texture pixeltexture;
     pixeltexture.create(WIDTH,HEIGHT);
@@ -340,8 +395,6 @@ int main(){
         drawcube(framebuffer,cubeverts,255,0,0,255,angle1,angle2,angle3);
 
         angle1 += 1.0f;
-        angle2 += 1.0f;
-        angle3 += 1.0f;
 
         pixeltexture.update(framebuffer.data());
         std::fill(framebuffer.begin() , framebuffer.end(),0);
