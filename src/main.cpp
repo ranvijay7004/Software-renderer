@@ -1,5 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
 
 const int WIDTH = 1920;
 const int HEIGHT = 1080;
@@ -195,6 +199,43 @@ struct mat4{
     }
 };
 
+struct triangle{
+    int x , y , z;
+};
+
+bool loadobj(const std::string& path , std::vector<Vec3>& Vertices , std::vector<triangle>& triangles){
+    std::ifstream file(path);
+    if(!file.is_open()) return false;
+    
+    std::string line;
+    
+    while(std::getline(file,line)){
+        std::istringstream ss(line);
+        std::string tag;
+        ss>>tag;
+        
+        if(tag == "v"){
+            Vec3 v;
+            ss>>v.x>>v.y>>v.z;
+            Vertices.push_back(v);
+        }
+
+        if(tag == "f"){
+            std::vector<int> corners;
+            std::string tokens;
+
+            while(ss>>tokens){
+                corners.push_back(std::stoi(tokens) - 1);
+            }
+            
+            for(int k = 1 ; k+1 < corners.size() ; k++){
+                triangles.push_back({corners[0] , corners[k] , corners[k+1]});
+            }
+        } 
+    }
+    return true;
+}
+
 void setpixel(std::vector<uint8_t>& framebuffer , int x , int y , uint8_t r , uint8_t g , uint8_t b , uint8_t a ){
     
     if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) return;
@@ -290,7 +331,12 @@ void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 ,
             bool inside = (w1 + bias1 > 0 && w2 + bias2 > 0 && w3 + bias3 > 0);
 
             if(inside){
-                setpixel(framebuffer,x,y,r,g,b,a);
+                float A = w1 + w2 + w3;
+                if(A == 0) continue;
+                float l1 = (float)w2/A;
+                float l2 = (float)w3/A;
+                float l3 = (float)w1/A;
+                setpixel(framebuffer,x,y,(uint8_t)(l1*255),(uint8_t)(l2*255),(uint8_t)(l3*255),a);
             }
         }
     }
@@ -305,11 +351,9 @@ bool toscreen(mat4& x , Vec3& p , Vec2& out){
     return true;
 }
 
-void drawcube(std::vector<uint8_t>& framebuffer , Vec3 vert[8] ,
-    float angle1 , float angle2 , float angle3){
+void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<Vec3>& Vertices , std::vector<triangle>& triangles
+    ,float angle1 , float angle2 , float angle3){
 
-    Vec2 sp[8];
-    bool visible[8];
     float camX = 0 , camY = 0  , camZ = -20;
 
     mat4 rotateY = mat4::rotationY(angle1);
@@ -322,42 +366,36 @@ void drawcube(std::vector<uint8_t>& framebuffer , Vec3 vert[8] ,
             .multiply(rotateY)
             .multiply(rotateX)
             .multiply(rotateZ);
-
-    for(int i  = 0 ; i < 8 ; i++){
-        visible[i] = toscreen(x,vert[i],sp[i]);
+    
+    std::vector<Vec2> sp(Vertices.size());
+    std::vector<bool> visible(Vertices.size());
+    
+    for(int i = 0 ; i < Vertices.size() ; i++){
+        visible[i] = toscreen(x,Vertices[i],sp[i]);
     }
-
-    int faces [6][4] = {
-        {0,1,2,3} , {1,5,6,2},
-        {5,4,7,6} , {4,0,3,7},
-        {1,0,4,5} , {3,2,6,7}
-    };
 
     int colors[6][4] = {
         {255,107,107,255} , {255,217,61,255},
         {107,203,119,255} , {77,150,255,255},
         {199,125,255,255} , {255,159,67,255}
     };
-
-    for(int i = 0 ; i < 6 ; i++){
-        int v1 = faces[i][0];
-        int v2 = faces[i][1];
-        int v3 = faces[i][2];
-        int v4 = faces[i][3];
-
-        int c1 = colors[i][0];
-        int c2 = colors[i][1];
-        int c3 = colors[i][2];
-        int c4 = colors[i][3];
-
-        if(visible[v1] && visible[v2] && visible[v3] && visible[v4]){
-            filltriangle(framebuffer,sp[v1].x , sp[v1].y , sp[v2].x
-            , sp[v2].y , sp[v3].x,sp[v3].y , c1, c2 , c3 ,c4);
-
-            filltriangle(framebuffer,sp[v1].x , sp[v1].y , sp[v3].x
-            , sp[v3].y , sp[v4].x,sp[v4].y , c1 , c2 , c3 , c4);
+ 
+    for(int i = 0 ; i < triangles.size() ; i++){
+        triangle t = triangles[i];
+        int c = i/2 % 6;
+        if(visible[t.x] && visible[t.y] && visible[t.z]){
+            filltriangle(framebuffer, sp[t.x].x , sp[t.x].y , 
+            sp[t.y].x , sp[t.y].y , sp[t.z].x , sp[t.z].y ,
+            colors[c][0] , colors[c][1] , colors[c][2] , colors[c][3]);
         }
-    }
+    }  
+}
+
+Vec3 facenormal(Vec3 a , Vec3 b , Vec3 c){
+    Vec3 e1 = b-a;
+    Vec3 e2 = c-a;
+    Vec3 n = cross(e2,e1);
+    return normalise(n);
 }
 
 int main(){
@@ -367,10 +405,30 @@ int main(){
     sf::RenderWindow window(sf::VideoMode(WIDTH,HEIGHT) , "renderer");
     window.setFramerateLimit(60);
 
-    Vec3 cubevert[8] = {
-        {-3,-3,-3} , {3,-3,-3} , {3,3,-3} , {-3,3,-3}, //front face
-        {-3,-3,3} , {3,-3,3} , {3,3,3} , {-3,3,3} //backface
-    };
+    std::ifstream file("files/cube.obj");
+
+    if(!file.is_open()){
+        std::cerr<<"could not open cube.obj"<<std::endl;
+        return 1;
+    }
+    
+    std::vector<triangle> Triangles;
+    std::vector<Vec3> Vertices;
+
+    if(!loadobj("files/sphere.obj", Vertices , Triangles)){
+        std::cerr<<"couldn't load model"<<std::endl;
+        return 1;
+    }
+    
+    int outwards = 0;
+    for(int i = 0 ; i < Triangles.size() ; i++){
+        triangle k = Triangles[0];
+        Vec3 n = facenormal(Vertices[k.x] , Vertices[k.y] , Vertices[k.z]);
+        
+        if(dot(n,Vertices[k.x]) > 0) outwards++;
+    }
+
+    std::cerr<<outwards<<" of "<<Triangles.size()<<" points outwards"<<std::endl; 
 
     float angle1 = 0;
     float angle2 = 35.264;
@@ -392,7 +450,7 @@ int main(){
             }
         }
    
-        drawcube(framebuffer,cubevert, angle1 , angle2 , angle3);
+        drawmesh(framebuffer, Vertices , Triangles , angle1 , angle2 , angle3);
         angle1 += 1.0f;
 
         pixeltexture.update(framebuffer.data());
