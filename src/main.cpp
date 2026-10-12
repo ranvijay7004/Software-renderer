@@ -309,8 +309,9 @@ bool istopleft(int ax , int ay , int bx , int by){
     return istop || isleft; 
 }
 
-void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 , int y2 
-        ,int x3 , int y3 , uint8_t r , uint8_t g , uint8_t b , uint8_t a){
+void filltriangle(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer , int x1 , int y1 , int x2 , int y2 
+        ,int x3 , int y3 ,float z1 , float z2 , float z3 ,  uint8_t r , uint8_t g , uint8_t b , uint8_t a){
+
 
     int minX = std::min({x1,x2,x3});
     int maxX = std::max({x1,x2,x3});
@@ -324,6 +325,8 @@ void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 ,
     for(int x = minX ; x < maxX ; x++){
         for(int y = minY ; y < maxY ; y++){
 
+            if(x > WIDTH || x < 0 || y > HEIGHT || y < 0);
+
             int w1 = checkinside(x1,y1,x2,y2,x,y);
             int w2 = checkinside(x2,y2,x3,y3,x,y);
             int w3 = checkinside(x3,y3,x1,y1,x,y);
@@ -336,23 +339,31 @@ void filltriangle(std::vector<uint8_t>& framebuffer , int x1 , int y1 , int x2 ,
                 float l1 = (float)w2/A;
                 float l2 = (float)w3/A;
                 float l3 = (float)w1/A;
-                setpixel(framebuffer,x,y,(uint8_t)(l1*255),(uint8_t)(l2*255),(uint8_t)(l3*255),a);
+
+                float depth = l1/z1 + l2/z2 + l3/z3;
+
+                int idx = (y * WIDTH) + x;
+                if(depth > zbuffer[idx]){
+                    zbuffer[idx] = depth;
+                    setpixel(framebuffer,x,y,r,g,b,a);
+                }
             }
         }
     }
 }
 
-bool toscreen(mat4& x , Vec3& p , Vec2& out){
+bool toscreen(mat4& x , Vec3& p , Vec2& out , float& depth){
     Vec4 k = {p.x , p.y , p.z , 1};
     k = x.multiply(k);
 
     if(k.w <= 0.5f) return false;
+    depth = k.w;
     out = {k.x/k.w + WIDTH/2 , k.y/k.w + HEIGHT/2};
     return true;
 }
 
-void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<Vec3>& Vertices , std::vector<triangle>& triangles
-    ,float angle1 , float angle2 , float angle3){
+void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer ,  std::vector<Vec3>& Vertices , std::vector<triangle>& triangles
+    ,float angle1 , float angle2 , float angle3 , int color =-1){
 
     float camX = 0 , camY = 0  , camZ = -20;
 
@@ -369,9 +380,10 @@ void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<Vec3>& Vertices , 
     
     std::vector<Vec2> sp(Vertices.size());
     std::vector<bool> visible(Vertices.size());
+    std::vector<float> depth(Vertices.size());
     
     for(int i = 0 ; i < Vertices.size() ; i++){
-        visible[i] = toscreen(x,Vertices[i],sp[i]);
+        visible[i] = toscreen(x,Vertices[i],sp[i],depth[i]);
     }
 
     int colors[6][4] = {
@@ -382,10 +394,11 @@ void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<Vec3>& Vertices , 
  
     for(int i = 0 ; i < triangles.size() ; i++){
         triangle t = triangles[i];
-        int c = i/2 % 6;
+        int c = (color >= 0) ? color : i/2 % 6;
         if(visible[t.x] && visible[t.y] && visible[t.z]){
-            filltriangle(framebuffer, sp[t.x].x , sp[t.x].y , 
+            filltriangle(framebuffer, zbuffer ,  sp[t.x].x , sp[t.x].y , 
             sp[t.y].x , sp[t.y].y , sp[t.z].x , sp[t.z].y ,
+            depth[t.x] , depth[t.y] , depth[t.z] ,
             colors[c][0] , colors[c][1] , colors[c][2] , colors[c][3]);
         }
     }  
@@ -401,6 +414,7 @@ Vec3 facenormal(Vec3 a , Vec3 b , Vec3 c){
 int main(){
 
     std::vector<uint8_t> framebuffer(WIDTH*HEIGHT*4);
+    std::vector<float> zbuffer(WIDTH*HEIGHT , 0.0f);
 
     sf::RenderWindow window(sf::VideoMode(WIDTH,HEIGHT) , "renderer");
     window.setFramerateLimit(60);
@@ -414,8 +428,19 @@ int main(){
     
     std::vector<triangle> Triangles;
     std::vector<Vec3> Vertices;
+    std::vector<Vec3> Cubeverts;
+    std::vector<triangle> cubetrig;
 
-    if(!loadobj("files/sphere.obj", Vertices , Triangles)){
+    if(!loadobj("files/knot.obj", Vertices , Triangles)){
+        std::cerr<<"couldn't load model"<<std::endl;
+        return 1;
+    }
+
+    for(int i = 0 ; i < Vertices.size() ; i++){
+        Vertices[i] = Vertices[i]*1.5f;
+    }
+
+    if(!loadobj("files/cube.obj", Cubeverts , cubetrig)){
         std::cerr<<"couldn't load model"<<std::endl;
         return 1;
     }
@@ -427,8 +452,6 @@ int main(){
         
         if(dot(n,Vertices[k.x]) > 0) outwards++;
     }
-
-    std::cerr<<outwards<<" of "<<Triangles.size()<<" points outwards"<<std::endl; 
 
     float angle1 = 0;
     float angle2 = 35.264;
@@ -449,12 +472,13 @@ int main(){
                 window.close();
             }
         }
-   
-        drawmesh(framebuffer, Vertices , Triangles , angle1 , angle2 , angle3);
+
+        drawmesh(framebuffer, zbuffer , Vertices , Triangles , angle1 , angle2 , angle3,3);
         angle1 += 1.0f;
 
         pixeltexture.update(framebuffer.data());
         std::fill(framebuffer.begin() , framebuffer.end() , 0);
+        std::fill(zbuffer.begin() , zbuffer.end() , 0);
 
         window.clear();
         window.draw(pixelsprite);
