@@ -1,3 +1,0 @@
-C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/renderer.dir
-C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/edit_cache.dir
-C:/Users/Ranvijay kumar/software_renderer/build/CMakeFiles/rebuild_cache.dir

@@ -467,7 +467,7 @@ int main(){
     std::vector<triangle> Triangles;
     std::vector<Vec3> Vertices;
 
-    if(!loadobj("files/spiky.obj", Vertices , Triangles)){
+    if(!loadobj("models/spiky.obj", Vertices , Triangles)){
         std::cerr<<"couldn't load model"<<std::endl;
         return 1;
     }
