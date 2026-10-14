@@ -1,0 +1,3 @@
+/home/rivalfan/Software-renderer/build/CMakeFiles/renderer.dir
+/home/rivalfan/Software-renderer/build/CMakeFiles/edit_cache.dir
+/home/rivalfan/Software-renderer/build/CMakeFiles/rebuild_cache.dir
