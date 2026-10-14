@@ -210,6 +210,12 @@ struct triangle{
     int x , y , z;
 };
 
+struct texture{
+  int w ,h;
+
+  std::vector<uint8_t> data;
+};
+
 bool loadobj(const std::string& path , std::vector<Vec3>& Vertices , std::vector<triangle>& triangles){
     std::ifstream file(path);
     if(!file.is_open()) return false;
@@ -241,6 +247,25 @@ bool loadobj(const std::string& path , std::vector<Vec3>& Vertices , std::vector
         } 
     }
     return true;
+}
+
+bool loadppm(const std::string& path , texture& tex){
+
+  std::ifstream file(path,std::ios::binary);
+  
+  if(!file.is_open()) return false;
+
+  std::string magic;
+  int maxval;
+  
+  file>>magic>>tex.w>>tex.h>>maxval;
+
+  if(magic != "P6" || maxval != 255) return false;
+
+  file.get();
+  tex.data.resize(tex.w * tex.h * 3);
+  file.read((char*)tex.data.data() , tex.data.size());
+  return !file.fail();
 }
 
 void setpixel(std::vector<uint8_t>& framebuffer , int x , int y , uint8_t r , uint8_t g , uint8_t b , uint8_t a ){
@@ -471,6 +496,18 @@ int main(){
         std::cerr<<"couldn't load model"<<std::endl;
         return 1;
     }
+    
+    texture tex;
+
+    if(!loadppm("models/smiley.ppm" , tex)){
+      std::cerr<<"couldn't load texture"<<std::endl;
+      return 1;
+    }
+
+    std::cerr<<"texture width :"<<tex.w<<"  height :"<<tex.h<<std::endl;
+    
+    int o = (4 * tex.w + 5) * 3;
+    std::cerr<<(int)tex.data[o]<<" "<<(int)tex.data[o+1]<<" "<<(int)tex.data[o+2];
 
     std::vector<Vec3> vnormals = vertexnormals(Vertices,Triangles);    
 
