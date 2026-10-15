@@ -12,6 +12,7 @@ target_link_libraries(renderer PRIVATE
   sfml-graphics
   sfml-window
   sfml-system)
+  
 add_custom_command(TARGET renderer POST_BUILD COMMAND 
   ${CMAKE_COMMAND} -E copy_directory 
   ${CMAKE_SOURCE_DIR}/models 

@@ -208,6 +208,7 @@ struct mat4{
 
 struct triangle{
     int x , y , z;
+    int tx ,ty ,tz;
 };
 
 struct texture{
@@ -216,7 +217,39 @@ struct texture{
   std::vector<uint8_t> data;
 };
 
-bool loadobj(const std::string& path , std::vector<Vec3>& Vertices , std::vector<triangle>& triangles){
+struct color{
+    uint8_t r,g,b;
+};
+
+color sampletexture(texture& tex , float u  , float v){
+    
+    u = u - std::floor(u);
+
+    int x = (int)(u*tex.w);
+    int y = (int)(v*tex.h);
+
+    if(x > tex.w -1) x = tex.w - 1;
+    if(y > tex.h -1) y = tex.h - 1;
+
+    int indx = (y * tex.w + x) *3;
+
+    return {tex.data[indx] , tex.data[indx+1] , tex.data[indx+2]};
+}
+
+void parsecorner(const std::string& token , int& v , int& t){
+
+    v = std::stoi(token) -1;
+    t = -1;
+
+    size_t slash = token.find('/');
+    
+    if(slash != std::string::npos && slash +1 < token.size() && token[slash+1] != '/'){
+        t = std::stoi(token.substr(slash + 1)) -1;
+    }
+}
+
+bool loadobj(const std::string& path , std::vector<Vec3>& Vertices , std::vector<Vec2>& uvs , std::vector<triangle>& triangles){
+
     std::ifstream file(path);
     if(!file.is_open()) return false;
     
@@ -233,16 +266,32 @@ bool loadobj(const std::string& path , std::vector<Vec3>& Vertices , std::vector
             Vertices.push_back(v);
         }
 
-        if(tag == "f"){
-            std::vector<int> corners;
+        else if(tag == "vt"){
+            Vec2 uv;
+            ss>>uv.x>>uv.y;
+            uv.y = 1.0f - uv.y;
+            uvs.push_back(uv);
+        }
+
+        else if(tag == "f"){
+
+            std::vector<int> vs , ts;
             std::string tokens;
 
             while(ss>>tokens){
-                corners.push_back(std::stoi(tokens) - 1);
+                int v , t;
+                parsecorner(tokens , v , t);
+                vs.push_back(v);
+                ts.push_back(t);
             }
             
-            for(int k = 1 ; k+1 < corners.size() ; k++){
-                triangles.push_back({corners[0] , corners[k] , corners[k+1]});
+            for(int k = 1 ; k+1 < vs.size() ; k++){
+                triangle tri;
+
+                tri.x = vs[0] , tri.y = vs[k] , tri.z = vs[k+1];
+                tri.tx = ts[0] , tri.ty = ts[k] , tri.tz = ts[k+1];
+
+                triangles.push_back(tri);
             }
         } 
     }
@@ -341,8 +390,9 @@ bool istopleft(int ax , int ay , int bx , int by){
     return istop || isleft; 
 }
 
-void filltriangle(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer , int x1 , int y1 , int x2 , int y2 
-    ,int x3 , int y3 ,float z1 , float z2 , float z3 , float s1 , float s2 , float s3 ,  uint8_t r , uint8_t g , uint8_t b , uint8_t a){
+void filltriangle(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer , int x1 , int y1 , int x2 , int y2 ,
+    int x3 , int y3 ,float z1 , float z2 , float z3 , float s1 , float s2 , float s3 ,float u1 , float v1 ,
+    float u2 , float v2 , float u3 , float v3 , texture& tex , uint8_t r , uint8_t g , uint8_t b , uint8_t a){
 
 
     int minX = std::min({x1,x2,x3});
@@ -357,7 +407,7 @@ void filltriangle(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffe
     for(int x = minX ; x < maxX ; x++){
         for(int y = minY ; y < maxY ; y++){
 
-            if(x > WIDTH || x < 0 || y > HEIGHT || y < 0) continue;
+            if(x >= WIDTH || x < 0 || y >= HEIGHT || y < 0) continue;
 
             int w1 = checkinside(x1,y1,x2,y2,x,y);
             int w2 = checkinside(x2,y2,x3,y3,x,y);
@@ -382,7 +432,12 @@ void filltriangle(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffe
                     if(shade < 0) shade = 0 ;
                     if(shade > 1) shade = 1;
 
-                    setpixel(framebuffer,x,y,(uint8_t)(r*shade),(uint8_t)(g*shade),(uint8_t)(b*shade),a);
+                    float u = (l1*u1/z1 + l2*u2/z2 + l3*u3/z3) / depth;
+                    float v = (l1*v1/z1 + l2*v2/z2 + l3*v3/z3) / depth;
+
+                    color c = sampletexture(tex , u , v);
+
+                    setpixel(framebuffer,x,y,(uint8_t)(c.r*shade),(uint8_t)(c.g*shade),(uint8_t)(c.b*shade),a);
                 }
             }
         }
@@ -400,7 +455,7 @@ bool toscreen(mat4& x , Vec3& p , Vec2& out , float& depth){
 }
 
 void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer ,  std::vector<Vec3>& Vertices , std::vector<triangle>& triangles
-    ,std::vector<Vec3>& vnormal ,float angle1 , float angle2 , float angle3 , int color =-1){
+    ,std::vector<Vec3>& vnormal , texture& tex , std::vector<Vec2>& uvs , float angle1 , float angle2 , float angle3 , int color =-1){
 
     float camX = 0 , camY = 0  , camZ = -20;
     Vec3 light = {-0.6f , -0.6f , -0.7f};
@@ -449,6 +504,14 @@ void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer , 
 
     for(int i = 0 ; i < triangles.size() ; i++){
         triangle t = triangles[i];
+        
+        Vec2 uv1 = {0,0} , uv2 = {0,0} , uv3 = {0,0};
+
+        if(t.tx >= 0){
+            uv1 = uvs[t.tx];
+            uv2 = uvs[t.ty];
+            uv3 = uvs[t.tz];
+        }
 
         int c = (color >= 0) ? color : i/2 % 6;
 
@@ -457,6 +520,7 @@ void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer , 
             sp[t.y].x , sp[t.y].y , sp[t.z].x , sp[t.z].y ,
             depth[t.x] , depth[t.y] , depth[t.z] ,
             vbright[t.x] , vbright[t.y] , vbright[t.z],
+            uv1.x , uv1.y , uv2.x , uv2.y , uv3.x , uv3.y , tex,
             (int)(colors[c][0]) , (int)(colors[c][1]) , (int)(colors[c][2]) , 255);
         }
     }  
@@ -491,34 +555,24 @@ int main(){
     
     std::vector<triangle> Triangles;
     std::vector<Vec3> Vertices;
+    std::vector<Vec2> uvs;
+    texture tex;
 
-    if(!loadobj("models/spiky.obj", Vertices , Triangles)){
+    if(!loadobj("models/spiky_uv.obj", Vertices , uvs , Triangles)){
         std::cerr<<"couldn't load model"<<std::endl;
         return 1;
     }
     
-    texture tex;
-
-    if(!loadppm("models/smiley.ppm" , tex)){
+    if(!loadppm("models/checker.ppm" , tex)){
       std::cerr<<"couldn't load texture"<<std::endl;
       return 1;
     }
 
-    std::cerr<<"texture width :"<<tex.w<<"  height :"<<tex.h<<std::endl;
+    std::vector<Vec3> vnormals = vertexnormals(Vertices,Triangles);
+
+    triangle t = Triangles[0];
+    std::cerr<<uvs.size()<<" uvs size "<<t.x<<" "<<t.y<<" "<<t.z<<" "<<t.tx<<" "<<t.ty<<" "<<t.tz<<std::endl;
     
-    int o = (4 * tex.w + 5) * 3;
-    std::cerr<<(int)tex.data[o]<<" "<<(int)tex.data[o+1]<<" "<<(int)tex.data[o+2];
-
-    std::vector<Vec3> vnormals = vertexnormals(Vertices,Triangles);    
-
-    int outwards = 0;
-    for(int i = 0 ; i < Triangles.size() ; i++){
-        triangle k = Triangles[i];
-        Vec3 n = facenormal(Vertices[k.x] , Vertices[k.y] , Vertices[k.z]);
-        
-        if(dot(n,Vertices[k.x]) > 0) outwards++;
-    }
-
     float angle1 = 0;
     float angle2 = 35.264;
     float angle3 = 45;
@@ -544,7 +598,7 @@ int main(){
         float dt = clock.restart().asSeconds();
         window.setTitle("renderer  " + std::to_string((int)(1/dt)) + " fps  " + std::to_string((int)(1000*dt)) + " ms");
 
-        drawmesh(framebuffer, zbuffer , Vertices , Triangles ,  vnormals , angle1 , angle2 , angle3,3);
+        drawmesh(framebuffer, zbuffer , Vertices , Triangles ,  vnormals , tex , uvs , angle1 , angle2 , angle3,3);
         angle1 += 1.0f;
 
         pixeltexture.update(framebuffer.data());
