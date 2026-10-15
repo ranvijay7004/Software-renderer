@@ -661,7 +661,7 @@ int main(){
     pixelsprite.setTexture(pixeltexture);
 
     sf::Font font;
-    if(!font.loadFromFile("assets/font.ttf")) return 1;     // put any .ttf there, or change the path
+    if(!font.loadFromFile("assets/font.TTF")) return 1;     // put any .ttf there, or change the path
 
     sf::Text hud;
     hud.setFont(font);
