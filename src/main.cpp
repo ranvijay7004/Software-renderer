@@ -5,8 +5,9 @@
 #include <string>
 #include <sstream>
 
-const int WIDTH = 1920;
-const int HEIGHT = 1080;
+const int WIDTH = 960;
+const int HEIGHT = 540;
+const float NEAR_W = 1.0f;
 
 struct Vec2{
     float x,y;
@@ -395,10 +396,10 @@ void filltriangle(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffe
     float u2 , float v2 , float u3 , float v3 , texture& tex , uint8_t r , uint8_t g , uint8_t b , uint8_t a){
 
 
-    int minX = std::min({x1,x2,x3});
-    int maxX = std::max({x1,x2,x3});
-    int minY = std::min({y1,y2,y3});
-    int maxY = std::max({y1,y2,y3});
+    int minX = std::max(std::min({x1,x2,x3}) , 0);
+    int maxX = std::min(std::max({x1,x2,x3}) , WIDTH);
+    int minY = std::max(std::min({y1,y2,y3}) , 0);
+    int maxY = std::min(std::max({y1,y2,y3}) , HEIGHT);
 
     int bias1 = istopleft(x1,y1,x2,y2);
     int bias2 = istopleft(x2,y2,x3,y3);
@@ -454,38 +455,112 @@ bool toscreen(mat4& x , Vec3& p , Vec2& out , float& depth){
     return true;
 }
 
-void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer ,  std::vector<Vec3>& Vertices , std::vector<triangle>& triangles
-    ,std::vector<Vec3>& vnormal , texture& tex , std::vector<Vec2>& uvs , float angle1 , float angle2 , float angle3 , int color =-1){
+struct Corner{
+    float x,y,w;
+    float u,v;
+    float shade;
+};
 
-    float camX = 0 , camY = 0  , camZ = -20;
+Corner lerpcorner(const Corner& a , const Corner& b , float t){
+
+    Corner r;
+
+    r.x = a.x + t * (b.x - a.x);
+    r.y = a.y + t * (b.y - a.y);
+    r.w = a.w + t * (b.w - a.w);
+    r.u = a.u + t * (b.u - a.u);
+    r.v = a.v + t * (b.v - a.v);
+    r.shade = a.shade + t * (b.shade - a.shade);
+
+    return r;
+}
+
+int clipnear(const Corner tri[3] , Corner kept[4]){
+
+    int n = 0;
+
+    for(int i = 0; i < 3 ; i++){
+
+        const Corner& cur = tri[i];
+        const Corner& next = tri[(i+1) % 3];
+
+        bool curin = cur.w >= NEAR_W;
+        bool nextin = next.w >= NEAR_W;
+
+        if(curin && nextin){
+            kept[n++] = next;
+        }
+
+        else if(curin && !nextin){
+            float t = (NEAR_W - cur.w) / (next.w - cur.w);
+            kept[n++] = lerpcorner(cur , next , t);
+        }
+
+        else if(!curin && nextin){
+            float t = (NEAR_W - cur.w) / (next.w - cur.w);
+            kept[n++] = lerpcorner(cur , next , t);
+            kept[n++] = next;
+        }
+    }
+    return n;
+}
+
+void drawclipped(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer , const Corner& a ,
+     const Corner& b, const Corner& c , texture& tex , int r , int g , int bl){
+
+
+    int x1 = (int)(a.x/a.w + WIDTH/2);
+    int y1 = (int)(a.y/a.w + HEIGHT/2);
+    int x2 = (int)(b.x/b.w + WIDTH/2);
+    int y2 = (int)(b.y/b.w + HEIGHT/2);
+    int x3 = (int)(c.x/c.w + WIDTH/2);
+    int y3 = (int)(c.y/c.w + HEIGHT/2);
+
+    filltriangle(framebuffer , zbuffer , x1 , y1 , x2 , y2 , x3 , y3 ,
+                 a.w , b.w , c.w , 
+                 a.shade , b.shade  , c.shade ,
+                 a.u , a.v , b.u , b.v , c.u , c.v,
+                 tex , r , g , bl , 255);
+}
+
+void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer ,  std::vector<Vec3>& Vertices , std::vector<triangle>& triangles
+    ,std::vector<Vec3>& vnormal , texture& tex , std::vector<Vec2>& uvs , float angle1 , float camX , float camY ,
+    float camZ , float yaw , float pitch , int color =-1){
+
     Vec3 light = {-0.6f , -0.6f , -0.7f};
     light = normalise(light);
     float ambient = 0.12f;
 
     mat4 rotateY = mat4::rotationY(angle1);
-    mat4 rotateX = mat4::rotationX(angle2);
-    mat4 rotateZ = mat4::rotationZ(angle3);
-    mat4 view = mat4::transaltion(-camX , -camY , -camZ);
-    mat4 pers = mat4::perspective(1200.0f);
+    mat4 slide = mat4::transaltion(-camX , -camY , -camZ);
+    mat4 pers = mat4::perspective(800.0f);
+    mat4 turnY = mat4::rotationY(yaw);
+    mat4 turnX = mat4::rotationX(pitch);
 
-    mat4 model = rotateY.multiply(rotateX).multiply(rotateZ);
+    mat4 view = turnX.multiply(turnY).multiply(slide);
+
+    mat4 model = rotateY;
     
     mat4 x = pers.multiply(view).multiply(model);
     
-    std::vector<Vec2> sp(Vertices.size());
-    std::vector<bool> visible(Vertices.size());
-    std::vector<float> depth(Vertices.size());
+
     std::vector<float> vbright(Vertices.size());
-    
-    for(int i = 0 ; i < Vertices.size() ; i++){
-        visible[i] = toscreen(x,Vertices[i],sp[i],depth[i]);
-    }
+
+    std::vector<Vec4> clip(Vertices.size());
+
 
     int colors[6][4] = {
         {255,107,107,255} , {255,217,61,255},
         {107,203,119,255} , {77,150,255,255},
         {199,125,255,255} , {255,159,67,255}
     };
+    
+
+    for(int i = 0 ; i < Vertices.size() ; i++){
+        Vec4 k  = {Vertices[i].x , Vertices[i].y , Vertices[i].z , 1};
+        clip[i] = x.multiply(k);
+    }
+
 
     for(int i = 0 ; i < Vertices.size() ; i++){
 
@@ -515,13 +590,18 @@ void drawmesh(std::vector<uint8_t>& framebuffer , std::vector<float>& zbuffer , 
 
         int c = (color >= 0) ? color : i/2 % 6;
 
-        if(visible[t.x] && visible[t.y] && visible[t.z]){
-            filltriangle(framebuffer, zbuffer ,  sp[t.x].x , sp[t.x].y , 
-            sp[t.y].x , sp[t.y].y , sp[t.z].x , sp[t.z].y ,
-            depth[t.x] , depth[t.y] , depth[t.z] ,
-            vbright[t.x] , vbright[t.y] , vbright[t.z],
-            uv1.x , uv1.y , uv2.x , uv2.y , uv3.x , uv3.y , tex,
-            (int)(colors[c][0]) , (int)(colors[c][1]) , (int)(colors[c][2]) , 255);
+        Corner tri[3];
+
+        tri[0] = {clip[t.x].x, clip[t.x].y , clip[t.x].w , uv1.x , uv1.y , vbright[t.x]};
+        tri[1] = {clip[t.y].x, clip[t.y].y , clip[t.y].w , uv2.x , uv2.y , vbright[t.y]};
+        tri[2] = {clip[t.z].x, clip[t.z].y , clip[t.z].w , uv3.x , uv3.y , vbright[t.z]};
+
+        Corner kept[4];
+        int n = clipnear(tri , kept);
+
+        for(int k = 1 ; k+1 < n ; k++){
+            drawclipped(framebuffer , zbuffer , kept[0] , kept[k] , kept[k+1] , tex ,
+                        colors[c][0] , colors[c][1] , colors[c][2]);
         }
     }  
 }
@@ -550,7 +630,7 @@ int main(){
     std::vector<uint8_t> framebuffer(WIDTH*HEIGHT*4);
     std::vector<float> zbuffer(WIDTH*HEIGHT , 0.0f);
 
-    sf::RenderWindow window(sf::VideoMode(WIDTH,HEIGHT) , "renderer");
+    sf::RenderWindow window(sf::VideoMode(1920,1080) , "renderer");
     window.setFramerateLimit(60);
     
     std::vector<triangle> Triangles;
@@ -558,34 +638,61 @@ int main(){
     std::vector<Vec2> uvs;
     texture tex;
 
-    if(!loadobj("models/spiky_uv.obj", Vertices , uvs , Triangles)){
+    if(!loadobj("assets/spiky_uv.obj", Vertices , uvs , Triangles)){
         std::cerr<<"couldn't load model"<<std::endl;
         return 1;
     }
     
-    if(!loadppm("models/checker.ppm" , tex)){
+    if(!loadppm("assets/checker.ppm" , tex)){
       std::cerr<<"couldn't load texture"<<std::endl;
       return 1;
     }
 
     std::vector<Vec3> vnormals = vertexnormals(Vertices,Triangles);
 
-    triangle t = Triangles[0];
-    std::cerr<<uvs.size()<<" uvs size "<<t.x<<" "<<t.y<<" "<<t.z<<" "<<t.tx<<" "<<t.ty<<" "<<t.tz<<std::endl;
     
     float angle1 = 0;
-    float angle2 = 35.264;
-    float angle3 = 45;
-    
+
 
     sf::Texture pixeltexture;
     pixeltexture.create(WIDTH,HEIGHT);
     sf::Sprite pixelsprite;
+    pixelsprite.setScale(2.0f , 2.0f);
     pixelsprite.setTexture(pixeltexture);
+
+    sf::Font font;
+    if(!font.loadFromFile("assets/font.ttf")) return 1;     // put any .ttf there, or change the path
+
+    sf::Text hud;
+    hud.setFont(font);
+    hud.setCharacterSize(18);
+    hud.setFillColor(sf::Color::White);
+    hud.setPosition(10 , 10);
+
+    sf::Text manual;
+    manual.setFont(font);
+    manual.setCharacterSize(16);
+    manual.setFillColor(sf::Color::White);
+    manual.setString("CONTROLS\nClick window - lock mouse\nEsc - unlock mouse\nMouse - look around\nW A S D - walk\nSpace - go up\nShift - go down");
+    sf::FloatRect mb = manual.getLocalBounds();
+    manual.setPosition(window.getSize().x - mb.width - 20 , window.getSize().y - mb.height - mb.top - 20);
 
     sf::Clock clock;
 
     sf::Event event;
+    
+    float speed = 15.0f;
+    float turnspeed = 50.0f;
+
+    float camX = 0;
+    float camY = 0;
+    float camZ = -20.0f;
+
+    float yaw = 0;
+    float pitch  = 0;
+    
+    bool mouselook = false;
+    float sensitivity = 0.1f;
 
     while(window.isOpen()){
         while(window.pollEvent(event)){
@@ -593,12 +700,57 @@ int main(){
             if(event.type == sf::Event::Closed){
                 window.close();
             }
-        }
-        
-        float dt = clock.restart().asSeconds();
-        window.setTitle("renderer  " + std::to_string((int)(1/dt)) + " fps  " + std::to_string((int)(1000*dt)) + " ms");
 
-        drawmesh(framebuffer, zbuffer , Vertices , Triangles ,  vnormals , tex , uvs , angle1 , angle2 , angle3,3);
+            if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left){
+                mouselook = true;
+                window.setMouseCursorVisible(false);
+                window.setMouseCursorGrabbed(true);
+                sf::Vector2u size = window.getSize();
+                sf::Mouse::setPosition(sf::Vector2i(size.x / 2 , size.y / 2) , window);
+            }
+
+            if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape){
+                mouselook = false;
+                window.setMouseCursorVisible(true);
+                window.setMouseCursorGrabbed(false);
+            }
+
+        }
+ 
+
+        float dt = clock.restart().asSeconds();
+         
+
+        if(mouselook && window.hasFocus()){
+            sf::Vector2u size = window.getSize();
+            sf::Vector2i center(size.x / 2 , size.y / 2);
+            sf::Vector2i pos = sf::Mouse::getPosition(window);
+
+            yaw   += (pos.x - center.x) * sensitivity;
+            pitch -= (pos.y - center.y) * sensitivity;
+
+            sf::Mouse::setPosition(center , window);
+        }
+
+        if(pitch > 89.0f) pitch = 89.0f;
+        if(pitch < -89.0f) pitch = -89.0f;
+
+        float radians = yaw * 3.14159265f/180.0f;
+        float s = std::sin(radians);
+        float c = std::cos(radians);
+
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){camX += s * speed * dt; camZ += c * speed * dt;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){camX -= s * speed * dt; camZ -= c * speed * dt;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){camX -= c * speed * dt; camZ += s * speed * dt;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){camX += c * speed * dt; camZ -= s * speed * dt;}
+         
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))  camY -= speed * dt;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) camY += speed * dt;  
+
+        drawmesh(framebuffer, zbuffer , Vertices , Triangles ,  vnormals , tex ,
+        uvs , angle1 , camX , camY , camZ , yaw , pitch , 3);
+
         angle1 += 1.0f;
 
         pixeltexture.update(framebuffer.data());
@@ -607,7 +759,19 @@ int main(){
 
         window.clear();
         window.draw(pixelsprite);
+
+        hud.setString("FPS " + std::to_string((int)(1 / dt))
+        + "\nMS " + std::to_string((int)(1000 * dt))
+        + "\nX " + std::to_string((int)camX)
+        + "\nY " + std::to_string((int)camY)
+        + "\nZ " + std::to_string((int)camZ)
+        + "\nYaw " + std::to_string((int)yaw)
+        + "\nPitch " + std::to_string((int)pitch));
+
+        window.draw(hud);
+        window.draw(manual);
         window.display();
     }
     return 0;
 }
+ 

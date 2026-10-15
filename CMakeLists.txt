@@ -15,5 +15,9 @@ target_link_libraries(renderer PRIVATE
   
 add_custom_command(TARGET renderer POST_BUILD COMMAND 
   ${CMAKE_COMMAND} -E copy_directory 
-  ${CMAKE_SOURCE_DIR}/models 
-  $<TARGET_FILE_DIR:renderer>/models)
+  ${CMAKE_SOURCE_DIR}/assets 
+  $<TARGET_FILE_DIR:renderer>/assets)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+  endif()
