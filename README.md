@@ -53,11 +53,11 @@ For full display Watch yt playlist ▶️ https://youtube.com/playlist?list=PLIN
 All of the rendering lives in a single file, [`src/main.cpp`](src/main.cpp).
 
 ## Screenshots
+<img width="1068" height="677" alt="{571D2E0E-DE5C-4060-95D6-B52BA361D668}" src="https://github.com/user-attachments/assets/05f1c410-dfd8-42fc-93e5-96b1987e5aff" />
+<img width="1101" height="751" alt="{113861FE-B1D5-48CD-A9A4-EA556956FF43}" src="https://github.com/user-attachments/assets/d3210853-ca88-488c-9288-5301f1011693" />
+<img width="1322" height="756" alt="{870435B4-3D17-4A3E-A140-4FF901C09C10}" src="https://github.com/user-attachments/assets/53753c0c-d21f-4ad4-ad6a-1f04a412fad8" />
+<img width="1920" height="1162" alt="{4DE8507B-0D20-4AD9-B702-8FAEB5D7BE39}" src="https://github.com/user-attachments/assets/d60e2e32-1074-4a48-b894-0e57439c73c9" />
 
-<p align="center">
-  <img src="docs/images/screenshot-2.png" width="49%" alt="The renderer, second view">
-  <img src="docs/images/screenshot-3.png" width="49%" alt="The renderer, third view">
-</p>
 
 ## Quick start
 
