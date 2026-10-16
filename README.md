@@ -5,7 +5,7 @@ A 3D renderer written from scratch in C++. It draws every pixel itself, on the C
 Load a 3D model, light it, texture it, and fly around it, or straight through it, with the mouse and keyboard.
 Built with C++17 and SFML 2.6.2.
 
-# Demo clips
+## Demo clip
 
 
 
@@ -361,7 +361,6 @@ Planned: profiling and optimising the inner loop, several objects in one scene l
 ## Acknowledgements
 
 - **[SFML](https://www.sfml-dev.org/)** for the window and input layer.
-- **[DejaVu Sans Mono](https://dejavu-fonts.github.io/)** for the on-screen text, under the Bitstream Vera license (see `assets/FONT-LICENSE.txt`).
 - **Claude**, an AI assistant from Anthropic. I built this project to learn computer graphics from first principles, and I used Claude as a tutor: it explained concepts, helped me debug, and helped write parts of the implementation (such as near-plane clipping, the camera controls and the on-screen display) as well as the build setup and this README.
 
 ## License
