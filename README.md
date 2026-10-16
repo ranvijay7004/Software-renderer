@@ -345,7 +345,7 @@ Software-renderer/
 └── assets/
     ├── *.obj             sample meshes
     ├── *.ppm             sample textures
-    └── *font.ttf   font for the on-screen text     t
+    └── *font.ttf         font for the on-screen text     
 ```
 
 ## Limitations and next steps
