@@ -5,13 +5,13 @@ A 3D renderer written from scratch in C++. It draws every pixel itself, on the C
 Load a 3D model, light it, texture it, and fly around it, or straight through it, with the mouse and keyboard.
 Built with C++17 and SFML 2.6.2.
 
-# Demo and youtube links
+# Demo clips
 
 
 
 https://github.com/user-attachments/assets/8d890690-509e-43ec-b406-a251bdfae2bc
 
-
+For full display Watch yt playlist ▶️ https://youtube.com/playlist?list=PLINJKWH-hTM4&si=WtbEZuHvOXJvIX09
 
 
 
