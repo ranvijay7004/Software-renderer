@@ -25,7 +25,7 @@ For full display Watch yt playlist ▶️ https://youtube.com/playlist?list=PLIN
   - [Windows 11](#windows-11)
   - [Linux](#linux)
   - [macOS](#macos)
-  - [Using an SFML you already have](#using-an-sfml-you-already-have)
+  - [Choosing where SFML comes from](#choosing-where-sfml-comes-from)
   - [Build types: Release and Debug](#build-types-release-and-debug)
   - [Running it](#running-it)
 - [Troubleshooting](#troubleshooting)
@@ -73,7 +73,7 @@ cmake --build build
 
 On Windows, run `./build/renderer.exe` from the MSYS2 terminal, or double-click `build\renderer.exe`.
 
-The first build downloads SFML 2.6.2 and compiles it, which takes a few minutes and needs an internet connection. That happens once. After that, rebuilding the renderer takes seconds.
+If SFML 2.6 is not installed on your machine, the first `cmake -B build` downloads SFML 2.6.2 (about 80 MB, with the progress printed) and the build then compiles it. That takes a few minutes, needs an internet connection, and happens once. After that, rebuilding the renderer takes seconds. On Linux, if SFML 2.6 is already installed, CMake uses it and skips all of this; see [Choosing where SFML comes from](#choosing-where-sfml-comes-from).
 
 ## Controls
 
@@ -102,7 +102,7 @@ Walking follows the direction you are facing on the ground. Looking up or down d
 | Internet connection | first build only | to download SFML 2.6.2 |
 | Disk space | about 200 MB | the `build/` folder (it is not part of the repository) |
 
-**You do not install SFML yourself.** `CMakeLists.txt` downloads the exact version, SFML 2.6.2, and builds it for your compiler. That avoids the usual problems of mismatched compilers, missing DLLs and the wrong SFML version. The result is a single executable with SFML built in.
+**You do not have to install SFML yourself.** `CMakeLists.txt` uses an installed SFML 2.6.x if it finds one on Linux, and otherwise downloads the exact version, SFML 2.6.2, and builds it for your compiler. That avoids the usual problems of mismatched compilers, missing DLLs and the wrong SFML version. The result is a single executable with SFML built in.
 
 SFML 2.6.2 is used on purpose. SFML 3 has a different API, so the code in this project does not compile against it. This matters on some Linux distributions: do **not** install their `sfml` package (Arch ships SFML 3, for example). Let CMake build 2.6.2 for you.
 
@@ -202,16 +202,23 @@ The Ubuntu commands were tested on a clean Ubuntu 24.04. The Fedora and Arch pac
 
 Untested. In principle it needs the Xcode command line tools (`xcode-select --install`), then `brew install cmake ninja`, and the same `cmake -B build -G Ninja` and `cmake --build build` commands.
 
-### Using an SFML you already have
+### Choosing where SFML comes from
 
-If an SFML **2.6.x** is already installed (Fedora, for example, ships 2.6.2 as the `SFML-devel` package), you can skip the download and the SFML compile:
+CMake decides by itself (the option `USE_SYSTEM_SFML` defaults to `AUTO`):
+
+- **On Linux** it uses an installed SFML **2.6.x** if it finds one (Fedora, for example, ships 2.6.2 as the `SFML-devel` package). Configuring then takes about a second and there is nothing to compile.
+- **Otherwise** it downloads SFML 2.6.2 and builds it, as described above.
+- **On Windows** it always downloads, because a prebuilt SFML made with a different compiler usually does not link.
+- An installed **SFML 3** is ignored, because this project needs 2.6.
+
+You can force either choice:
 
 ```sh
-cmake -B build -G Ninja -DUSE_SYSTEM_SFML=ON
-cmake --build build
+cmake -B build -G Ninja -DUSE_SYSTEM_SFML=ON     # always use the installed SFML 2.6.x (an error if there is none)
+cmake -B build -G Ninja -DUSE_SYSTEM_SFML=OFF    # always download SFML 2.6.2
 ```
 
-This builds in a few seconds. It only works with SFML 2.6.x; CMake will stop with an error if it only finds SFML 3. In that case leave the option off and let CMake download 2.6.2.
+The configure step prints a line starting with `SFML:` that says which one it chose.
 
 ### Build types: Release and Debug
 
@@ -241,7 +248,9 @@ To update later: `git pull`, then `cmake --build build`.
 
 ## Troubleshooting
 
-**CMake cannot download SFML** (`Could not resolve host`, a Git or `FetchContent` error). The first configure needs an internet connection and `git`. If you are behind a firewall or proxy, install SFML 2.6.x another way and use [`-DUSE_SYSTEM_SFML=ON`](#using-an-sfml-you-already-have).
+**CMake cannot download SFML** (`Could not resolve host`, a Git or `FetchContent` error). The first configure needs an internet connection and `git`. If you are behind a firewall or proxy, install SFML 2.6.x another way and use [`-DUSE_SYSTEM_SFML=ON`](#choosing-where-sfml-comes-from).
+
+**`cmake -B build` seems stuck.** It is most likely downloading SFML (about 80 MB), which can take a few minutes on a slow connection; the progress is printed. It happens once. If SFML 2.6 is already installed on your Linux machine, CMake uses it and this step takes about a second.
 
 **`Could NOT find X11`, `UDev`, `OpenGL` or `Freetype` (Linux).** A development package is missing. Install the list for your distribution from [Linux](#linux), then delete the `build` folder and configure again.
 

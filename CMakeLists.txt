@@ -13,14 +13,35 @@ endif()
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
-# SFML 2.6.2: by default CMake downloads and builds it (nothing to install by hand).
-# Pass -DUSE_SYSTEM_SFML=ON to use an SFML 2.6.x that is already installed instead.
-option(USE_SYSTEM_SFML "Use an installed SFML 2.6.x instead of downloading SFML 2.6.2" OFF)
+# Where SFML comes from (this project needs SFML 2.6.x, not SFML 3):
+#   AUTO (default)  use an installed SFML 2.6.x if there is one (Linux only), otherwise download 2.6.2
+#   ON              always use the installed SFML 2.6.x (stops with an error if there is none)
+#   OFF             always download and build SFML 2.6.2
+set(USE_SYSTEM_SFML "AUTO" CACHE STRING "SFML source: AUTO, ON (installed 2.6.x) or OFF (download 2.6.2)")
+set_property(CACHE USE_SYSTEM_SFML PROPERTY STRINGS AUTO ON OFF)
 
-if(USE_SYSTEM_SFML)
-    find_package(SFML 2.6 COMPONENTS graphics window system REQUIRED)
+set(RENDERER_USE_SYSTEM_SFML FALSE)
+if(USE_SYSTEM_SFML STREQUAL "AUTO")
+    if(UNIX AND NOT APPLE)
+        find_package(SFML 2.6 COMPONENTS graphics window system QUIET)
+        if(SFML_FOUND)
+            set(RENDERER_USE_SYSTEM_SFML TRUE)
+        endif()
+    endif()
+elseif(USE_SYSTEM_SFML)
+    set(RENDERER_USE_SYSTEM_SFML TRUE)
+endif()
+
+if(RENDERER_USE_SYSTEM_SFML)
+    message(STATUS "SFML: using the SFML 2.6 installed on this machine")
+    find_package(SFML 2.6 COMPONENTS graphics window system QUIET)
+    if(NOT SFML_FOUND)
+        message(FATAL_ERROR "No SFML 2.6.x was found on this machine. Install SFML 2.6, or configure with -DUSE_SYSTEM_SFML=OFF to download SFML 2.6.2 instead. (SFML 3 does not work with this project.)")
+    endif()
 else()
+    message(STATUS "SFML: downloading and building SFML 2.6.2 (first build only, takes a few minutes, needs internet)")
     include(FetchContent)
+    set(FETCHCONTENT_QUIET OFF)                              # show the download progress
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)           # static: no SFML DLLs to ship
     set(SFML_BUILD_AUDIO OFF CACHE BOOL "" FORCE)            # the renderer needs no audio
     set(SFML_BUILD_NETWORK OFF CACHE BOOL "" FORCE)          # ... and no networking
