@@ -3,11 +3,17 @@
 A 3D renderer written from scratch in C++. It draws every pixel itself, on the CPU: no OpenGL calls, no GPU shaders, no graphics or math libraries. [SFML](https://www.sfml-dev.org/) is used only to open a window, read the keyboard and mouse, and put the finished image on screen.
 
 Load a 3D model, light it, texture it, and fly around it, or straight through it, with the mouse and keyboard.
-
-<!-- TODO: after uploading the demo video, replace this line with:  [▶ Watch the demo video](https://...)  -->
-![The renderer drawing a lit, textured model](docs/images/screenshot-1.png)
-
 Built with C++17 and SFML 2.6.2.
+
+# Demo and youtube links
+
+
+
+https://github.com/user-attachments/assets/8d890690-509e-43ec-b406-a251bdfae2bc
+
+
+
+
 
 ## Contents
 
