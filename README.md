@@ -247,7 +247,7 @@ To update later: `git pull`, then `cmake --build build`.
 
 **`Failed to open X11 display` (Wayland).** XWayland is not running. See the Wayland note under [Linux](#linux).
 
-**A window never appears, and the terminal says `couldn't load model`, `couldn't load texture` or `couldn't load font`.** The program could not find a file. Run it from the project folder or from `build/` (see [Running it](#running-it)), and check that the `assets/` folder is there with the files inside it.
+**A window never appears, and the terminal says `couldn't load model` or `couldn't load texture`.** The program could not find a file. Run it from the project folder or from `build/` (see [Running it](#running-it)), and check that the `assets/` folder is there with the files inside it.
 
 **It is slow.** Make sure the build is Release: the configure step prints `-- Build type: Release`. If it says Debug, or prints nothing, delete the `build` folder and configure again. The renderer also draws at half resolution on purpose (see [Performance](#performance)).
 
@@ -345,8 +345,7 @@ Software-renderer/
 └── assets/
     ├── *.obj             sample meshes
     ├── *.ppm             sample textures
-    ├── DejaVuSansMono.ttf   font for the on-screen text
-    └── FONT-LICENSE.txt     the font's license
+    └── *font.ttf   font for the on-screen text     t
 ```
 
 ## Limitations and next steps
