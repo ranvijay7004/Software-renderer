@@ -369,7 +369,6 @@ Planned: profiling and optimising the inner loop, several objects in one scene l
 ## Acknowledgements
 
 - **[SFML](https://www.sfml-dev.org/)** for the window and input layer.
-- **Claude**, an AI assistant from Anthropic. I built this project to learn computer graphics from first principles, and I used Claude as a tutor: it explained concepts, helped me debug, and helped write parts of the implementation (such as near-plane clipping, the camera controls and the on-screen display) as well as the build setup and this README.
 
 ## License
 
